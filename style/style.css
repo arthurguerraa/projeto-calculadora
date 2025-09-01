@@ -1,0 +1,153 @@
+/* ---------- Reset simples ---------- */
+* { 
+    box-sizing: border-box; 
+}
+
+html,body { 
+    height: 100%; 
+    margin: 0; 
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased; 
+}
+
+/* ---------- Layout da página ---------- */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,#eef2f7 0%, #f8fbff 100%);
+    padding: 24px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+/* ---------- Calculadora ---------- */
+.calculator {
+    background: linear-gradient(180deg,#ffffff 0%, #fbfdff 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(17,24,39,0.08);
+    overflow: hidden;
+    border: 1px solid rgba(17,24,39,0.04);
+}
+
+/* Display */
+.display {
+    padding: 18px;
+    background: linear-gradient(180deg,#0f1724 0%, #0b1220 100%);
+    color: #fff;
+    text-align: right;
+    font-size: 32px;
+    line-height: 1;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.display .history {
+    position: absolute;
+    opacity: 0.45;
+    font-size: 12px;
+    right: 16px;
+    top: 8px;
+    pointer-events: none;
+}
+
+.display .value {
+    width: 100%;
+    padding-right: 16px;
+    word-break: break-all; /* evita overflow de texto grande */
+}
+
+/* Teclado - grid */
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 18px;
+    background: linear-gradient(180deg,#f6f9fc 0%, #ffffff 100%);
+}
+
+/* Estilo base do botão */
+.key {
+    border: 0;
+    outline: 0;
+    background: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f1724;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(15,23,36,0.06);
+    transition: transform .06s ease, box-shadow .06s ease, background-color .08s ease;
+    user-select: none;
+}
+
+.key:active {
+    transform: translateY(1px) scale(.998);
+    box-shadow: 0 2px 4px rgba(15,23,36,0.08);
+}
+
+.key:focus {
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* Estilos para grupos de teclas */
+.key.operator {
+    background: linear-gradient(180deg,#fbf7ff,#f4eefb);
+    color: #7c3aed;
+}
+
+.key.equals {
+    background: linear-gradient(180deg,#06b6d4,#0891b2);
+    color: white;
+    grid-column: span 2; /* ocupa duas colunas */
+    font-size: 20px;
+}
+
+.key.clear {
+    background: linear-gradient(180deg,#fee2e2,#fecaca);
+    color: #991b1b;
+}
+
+.key.secondary {
+    background: linear-gradient(180deg,#f8fafc,#f1f5f9);
+    color: #334155;
+    font-weight: 600;
+}
+
+/* zero ocupa duas colunas */
+.key.zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 22px;
+}
+
+/* legenda embaixo (opcional) */
+.meta {
+    font-size: 12px;
+    color: #475569;
+    text-align: center;
+    padding: 10px 14px 16px;
+}
+
+/* responsividade */
+@media (max-width: 420px) {
+    .display { font-size: 28px; min-height: 66px; padding: 14px; }
+    .key { padding: 12px; font-size: 16px; border-radius: 8px; }
+    .keys { gap: 8px; padding: 12px; }
+    .wrapper { max-width: 360px; }
+}

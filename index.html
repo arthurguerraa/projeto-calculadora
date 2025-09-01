@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div class="wrapper">
+    <h1>Calculadora</h1>
+
+    <div class="calculator" role="region" aria-label="Calculadora">
+      <!-- Display (apenas parte visual; valor será atualizado por JS no futuro) -->
+      <div class="display" aria-live="polite">
+        <div class="value" id="display">0</div>
+      </div>
+
+      <!-- Teclado -->
+      <div class="keys" role="group" aria-label="Teclado da calculadora">
+        <!-- linha 1 -->
+        <button class="key clear" id="btn-clear" aria-label="Limpar">C</button>
+        <button class="key secondary" id="btn-back" aria-label="Backspace">⌫</button>
+        <button class="key secondary" id="btn-percent" aria-label="Porcentagem">%</button>
+        <button class="key operator" id="btn-divide" aria-label="Dividir">÷</button>
+
+        <!-- linha 2 -->
+        <button class="key" id="btn-7" aria-label="7">7</button>
+        <button class="key" id="btn-8" aria-label="8">8</button>
+        <button class="key" id="btn-9" aria-label="9">9</button>
+        <button class="key operator" id="btn-multiply" aria-label="Multiplicar">×</button>
+
+        <!-- linha 3 -->
+        <button class="key" id="btn-4" aria-label="4">4</button>
+        <button class="key" id="btn-5" aria-label="5">5</button>
+        <button class="key" id="btn-6" aria-label="6">6</button>
+        <button class="key operator" id="btn-subtract" aria-label="Subtrair">−</button>
+
+        <!-- linha 4 -->
+        <button class="key" id="btn-1" aria-label="1">1</button>
+        <button class="key" id="btn-2" aria-label="2">2</button>
+        <button class="key" id="btn-3" aria-label="3">3</button>
+        <button class="key operator" id="btn-add" aria-label="Adicionar">+</button>
+
+        <!-- linha 5 -->
+        <button class="key zero" id="btn-0" aria-label="0">0</button>
+        <button class="key" id="btn-dot" aria-label="Ponto decimal">.</button>
+        <button class="key equals" id="btn-equals" aria-label="Igual">=</button>
+      </div>
+
+      <div class="meta">Teclado e comportamento serão implementados depois (JS)</div>
+    </div>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
